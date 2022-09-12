@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useFirebaseWriteDelete} from "../hooks/useFirebaseWriteDelete";
 import {useParams} from "react-router-dom";
 import {useAuthContext} from "../hooks/useAuthContext";
@@ -72,6 +72,11 @@ export default function Game() {
     }
 
 
+    const saveWinner = useRef(() => {
+        console.log('saving')
+        writeWinner(params.id, winner)
+    })
+
     useEffect(() => {
         // toggle off the invite button
         setIsShowingInvite(false)
@@ -105,7 +110,7 @@ export default function Game() {
                 }else {
                     setWinner('DRAW')
                 }
-                writeWinner(params.id, winner)
+                saveWinner.current()
             }
         }
     }, [results, heardWinner, winner, user.uid])
