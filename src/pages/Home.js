@@ -23,7 +23,7 @@ export default function Home() {
         if (gameKey) {
             navigate(`/game/${gameKey}`)
         }
-    }, [gameKey])
+    }, [gameKey, navigate])
 
     return (
         <div>

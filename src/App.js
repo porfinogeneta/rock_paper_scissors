@@ -13,7 +13,7 @@ function App() {
     // mounted
     useEffect(() => {
         login()
-    }, [])
+    }, [login])
 
     return (
             <div className="app">

@@ -104,7 +104,7 @@ export default function Game() {
     useEffect(() => {
         setWinner('')
         connectPlayer()
-    }, [])
+    }, [connectPlayer])
 
     return (
         <div>
