@@ -18,13 +18,14 @@ export default function Home() {
     const handleClick = () => {
         writeData()
     }
-
+    /* eslint-disable */
     // connect created key to the route
     useEffect(() => {
         if (gameKey) {
             navigate(`/game/${gameKey}`)
         }
-    }, [gameKey, navigate])
+    }, [gameKey])
+    /* eslint-enable */
 
     return (
         <div>

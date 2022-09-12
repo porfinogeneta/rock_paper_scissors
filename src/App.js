@@ -10,10 +10,13 @@ function App() {
     const { isAuthReady } = useAuthContext()
     const { login } = useLoginAnonim()
 
+    /* eslint-disable */
     // mounted
     useEffect(() => {
         login()
-    }, [login])
+        console.log('login')
+    }, [])
+    /* eslint-enable */
 
     return (
             <div className="app">

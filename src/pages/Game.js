@@ -99,12 +99,13 @@ export default function Game() {
     const { connectPlayer } = useLoginAnonim(user.uid, params.id)
     // listener on the server
     const { error } = useListenToServer()
-
+    /* eslint-disable */
     // on mounted connect player to the current game
     useEffect(() => {
         setWinner('')
         connectPlayer()
-    }, [connectPlayer])
+    }, [])
+    /* eslint-enable */
 
     return (
         <div>
