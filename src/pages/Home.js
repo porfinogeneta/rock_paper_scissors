@@ -9,6 +9,7 @@ export default function Home() {
     // hooks
     const { user } = useAuthContext()
     const { writeData, gameKey } = useFirebaseWriteDelete({uid: user.uid})
+
     // router
     const navigate = useNavigate()
 
