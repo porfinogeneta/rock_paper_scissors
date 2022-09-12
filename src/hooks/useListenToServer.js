@@ -4,8 +4,8 @@ import {useEffect, useState} from "react";
 
 
 export const useListenToServer = (gameId) => {
-    const [results, setResults] = useState()
-    const [heardWinner, setHeardWinner] = useState()
+    const [results, setResults] = useState(null)
+    const [heardWinner, setHeardWinner] = useState(null)
 
     useEffect(() => {
         // get choices and ids of users logged in the game
@@ -25,7 +25,7 @@ export const useListenToServer = (gameId) => {
                 results.push({id: child.val().id, choice: child.val().choice});
               })
 
-            // data.forEach((elem) => results.push(elem.val()))
+            console.log(results, 'from the hook')
             setResults(results)
         }, (err) => {
             console.log(err.message)
@@ -34,6 +34,8 @@ export const useListenToServer = (gameId) => {
         return () => unsubscribe()
 
     }, [gameId])
+
+    // get users results
 
     return { results, heardWinner }
 

@@ -1,0 +1,13 @@
+.copied {
+    font-size: 5vmin;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@200;500&family=Rubik&display=swap');
+    font-family: 'Open Sans', sans-serif;
+    color: #01bc01;
+}
+
+.subtitle {
+    font-size: 5vmin;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@200;500&family=Rubik&display=swap');
+    font-family: 'Open Sans', sans-serif;
+}
+

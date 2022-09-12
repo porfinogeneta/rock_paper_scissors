@@ -8,17 +8,24 @@ import styles from "./Game.module.css";
 import ChooseFigure from "../components/ChooseFigure";
 import {useHandleUserChoice} from "../hooks/useHandleUserChoice";
 import ChosenFigure from "../components/ChosenFigure";
+import CopyingButton from "../components/CopyingButton";
+
 
 
 export default function Game() {
     const [you, setYou] = useState(null)
     const [enemy, setEnemy] = useState(null)
     const [winner, setWinner] = useState(null)
+    // invitation operations
+    const [isShowingInvite, setIsShowingInvite] = useState(false)
+
 
     // get auth user from context
     const { user } = useAuthContext()
     // get :id from link
     const params = useParams()
+    // hooks
+    const { connectPlayer } = useLoginAnonim(user.uid, params.id)
     // save user choice
     const { saveChoice, restartGame } = useHandleUserChoice(user.uid, params.id)
     // get winner
@@ -37,6 +44,7 @@ export default function Game() {
         restartGame(you.id, enemy.id)
         setWinner('')
     }
+
 
     // calculate winner
     const calculateWinner = (results) => {
@@ -65,21 +73,29 @@ export default function Game() {
 
 
     useEffect(() => {
+        // toggle off the invite button
+        setIsShowingInvite(false)
         // listen to winner changes
         setWinner(heardWinner)
         // if both users exists
         if (results) {
-            // set both players on the board
+            // if second user doesn't exist return a function, show invite button to allow to add players
+            if (!results[1]) {
+                setIsShowingInvite(true)
+                return
+            }
+            // set both players on the board if there are two players
             if (results[0].id === user.uid) {
                 setYou(results[0])
                 setEnemy(results[1])
-            }else {
+            } else {
                 setYou(results[1])
                 setEnemy(results[0])
             }
 
             if (results[0]['choice'] && results[1]['choice']) {
                 // calculate which choice won
+                console.log('hello')
                 const choiceWinner = calculateWinner(results)
                 // set winner
                 if (choiceWinner === results[0]['choice']) {
@@ -89,14 +105,13 @@ export default function Game() {
                 }else {
                     setWinner('DRAW')
                 }
-
+                writeWinner(params.id, winner)
             }
         }
-    }, [results, heardWinner, user.uid])
+    }, [results, heardWinner, winner, user.uid])
 
 
-    // hooks
-    const { connectPlayer } = useLoginAnonim(user.uid, params.id)
+
     // listener on the server
     const { error } = useListenToServer()
     /* eslint-disable */
@@ -111,7 +126,7 @@ export default function Game() {
         <div>
             { error }
             <h1 className={styles.title}>Game</h1>
-            {results && (
+            {results && !isShowingInvite && (
                 <>  { !winner && (
                     <ChooseFigure handleFigur={handleFigur}/>
                 )}
@@ -154,6 +169,9 @@ export default function Game() {
                         </div>
                     </div>
                 </>
+            )}
+            { isShowingInvite && (
+                <CopyingButton/>
             )}
         </div>
     )

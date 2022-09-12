@@ -14,7 +14,6 @@ function App() {
     // mounted
     useEffect(() => {
         login()
-        console.log('login')
     }, [])
     /* eslint-enable */
 
