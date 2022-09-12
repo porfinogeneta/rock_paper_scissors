@@ -100,7 +100,6 @@ export default function Game() {
 
             if (results[0]['choice'] && results[1]['choice']) {
                 // calculate which choice won
-                console.log('hello')
                 const choiceWinner = calculateWinner(results)
                 // set winner
                 if (choiceWinner === results[0]['choice']) {

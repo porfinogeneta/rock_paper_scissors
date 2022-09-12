@@ -15,11 +15,6 @@ export const useLoginAnonim = ( uid = null, gameId = null ) => {
 
     const connectPlayer = async () => {
         try {
-            // connect user
-            await set(ref(database, 'players/' + uid), {
-                id: uid,
-                participant: gameId
-            });
             // connect to game with user uid
             await set(ref(database, 'games/' + gameId + '/participants/' + uid), {
                 id: uid

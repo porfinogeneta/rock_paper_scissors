@@ -4,18 +4,20 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Game from "./pages/Game";
 import {useLoginAnonim} from "./hooks/useLoginAnonim";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 
 function App() {
     const { isAuthReady } = useAuthContext()
     const { login } = useLoginAnonim()
 
-    /* eslint-disable */
+    const signIn = useRef(() => {
+        login()
+    })
+
     // mounted
     useEffect(() => {
-        login()
-    }, [])
-    /* eslint-enable */
+        signIn.current()
+    }, [signIn])
 
     return (
             <div className="app">
