@@ -1,0 +1,61 @@
+.game {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60vmin;
+}
+
+.border {
+    /*margin-top: 24px;*/
+    width: 4px;
+    height: 40vh;
+    background: #9daaf2;
+    align-self: center;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+    }
+    .border {
+        width: 40vh;
+        height: 4px;
+        background: #9daaf2;
+    }
+    .choice {
+        height: 35vh;
+    }
+}
+
+.title {
+    font-size: 8vmin;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@200;500&family=Rubik&display=swap');
+    font-family: 'Open Sans', sans-serif;
+}
+
+.subtitle {
+    font-size: 5vmin;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@200;500&family=Rubik&display=swap');
+    font-family: 'Open Sans', sans-serif;
+}
+
+.winner {
+    color: #9daaf2;
+}
+h3 {
+    text-align: left;
+}
+
+.btn-new {
+    font-size: 2vmin;
+    border-radius: 8px;
+}

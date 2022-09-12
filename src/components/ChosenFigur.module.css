@@ -1,0 +1,10 @@
+.img {
+    width: 300px;
+    height: 300px;
+}
+
+p {
+    font-size: 3vmin;
+    letter-spacing: 1.5;
+    text-transform: capitalize;
+}

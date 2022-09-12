@@ -1,0 +1,11 @@
+
+.text-welcome {
+    font-size: 8vmin;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@200;500&family=Rubik&display=swap');
+    font-family: 'Open Sans', sans-serif;
+}
+.border {
+    margin-bottom: 12px;
+    border-bottom: 4px solid #f4db7d;
+    width: 50%;
+}
