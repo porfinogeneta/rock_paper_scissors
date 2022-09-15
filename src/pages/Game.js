@@ -129,7 +129,7 @@ export default function Game() {
     return (
         <div>
             { error }
-            <h1 className={styles.title}>Game</h1>
+            <h1 className={styles.title}>Rock Paper Scissors</h1>
             {results && !isShowingInvite && (
                 <>  { !winner && (
                     <ChooseFigure handleFigur={handleFigur}/>
