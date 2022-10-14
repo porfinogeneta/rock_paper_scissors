@@ -1,4 +1,5 @@
-# A simple React project project, which was a React training for me. It's a simple Rock Paper Scissors Game, project as a whole covers multiple technologies, which allow to create multiplayer games.
+# Project Intro
+A simple React project project, which was a React training for me. It's a simple Rock Paper Scissors Game, project as a whole covers multiple technologies, which allow to create multiplayer games.
 
 # Technologies Covered
 - Firebase Real Time Database
