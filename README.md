@@ -7,7 +7,8 @@ A simple React project project, which was a React training for me. It's a simple
 - CSS
 - React
 
-# Sample Screenshots
+# Sample Screenshot
+<img src="https://github.com/porfinogeneta/portfolio/blob/master/src/assets/photos/rockpaperscissors.png" alt="game"/>
 
 
 
