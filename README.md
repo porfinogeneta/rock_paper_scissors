@@ -1,3 +1,15 @@
+# A simple React project project, which was a React training for me. It's a simple Rock Paper Scissors Game, project as a whole covers multiple technologies, which allow to create multiplayer games.
+
+# Technologies Covered
+- Firebase Real Time Database
+- Anonymous Authentication
+- CSS
+- React
+
+# Sample Screenshots
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
